@@ -51,6 +51,12 @@ server.get('/retrievedata',async (req,res)=>{
    res.json(docs)
 
 })
+server.get('/',async (req,res)=>{
+
+  //  const docs =  await User.find({})
+   res.send("Welcome to mock-15")
+
+})
 
 server.listen(port,()=>{
     console.log('server started')
