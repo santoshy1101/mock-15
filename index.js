@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/mock15');
+  await mongoose.connect('mongodb+srv://styadav412:yadav@cluster0.rtpaopk.mongodb.net/mock15?retryWrites=true&w=majority');
   console.log("db connected")
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
