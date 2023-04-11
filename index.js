@@ -2,13 +2,13 @@ const express =require("express");
 const cors =require("cors");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+require("dotenv").config()
 
 
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb+srv://styadav412:yadav@cluster0.rtpaopk.mongodb.net/mock15?retryWrites=true&w=majority');
+  await mongoose.connect(process.env.MONGO_URI);
   console.log("db connected")
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
@@ -53,4 +53,5 @@ server.get('/retrievedata',async (req,res)=>{
 
 server.listen(8080,()=>{
     console.log('server started')
+    // console.log(process.env.MONGO_URI)
 })
