@@ -3,6 +3,7 @@ const cors =require("cors");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require("dotenv").config()
+const port = process.env.PORT || 3000
 
 
 main().catch(err => console.log(err));
@@ -51,7 +52,7 @@ server.get('/retrievedata',async (req,res)=>{
 
 })
 
-server.listen(8080,()=>{
+server.listen(port,()=>{
     console.log('server started')
-    // console.log(process.env.MONGO_URI)
+    console.log(process.env.PORT)
 })
