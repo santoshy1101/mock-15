@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
   const server = express();
 server.use(cors());
 server.use(bodyParser.json());
-
+server.use(express.json())
 server.post("/postedform",async (req,res)=>{
 
     let user = new User();
