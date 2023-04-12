@@ -4,8 +4,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require("dotenv").config()
 const port = process.env.PORT || 3000
-
-
 main().catch(err => console.log(err));
 
 async function main() {
@@ -60,5 +58,7 @@ server.get('/',async (req,res)=>{
 
 server.listen(port,()=>{
     console.log('server started')
-    console.log(process.env.PORT)
+    console.log(process.env.MONGO_URI)
 })
+
+
